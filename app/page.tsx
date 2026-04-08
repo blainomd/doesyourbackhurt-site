@@ -196,41 +196,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partner Board */}
-      <section className="py-20 px-6 bg-cream">
+      {/* Find Care */}
+      <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-teal-dark text-center mb-2">Who&apos;s helping in your area?</h2>
-          <p className="text-teal-dark/60 text-center mb-10 max-w-xl mx-auto">These partner slots connect people with back pain to the organizations that can actually help them.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-teal-dark text-center mb-2">Ready to see someone?</h2>
+          <p className="text-teal-dark/60 text-center mb-8">Find a spine specialist or physical therapist near you.</p>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-xl mx-auto">
+            <a href="https://www.zocdoc.com/search?dr_specialty=orthopedic-surgery&reason_visit=back-pain" target="_blank" rel="noopener noreferrer"
+              className="group p-6 bg-white rounded-2xl border border-teal/10 hover:shadow-lg hover:-translate-y-1 transition-all text-center">
+              <div className="w-12 h-12 rounded-xl bg-teal/10 mx-auto mb-3 flex items-center justify-center">
+                <svg className="w-6 h-6 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>
+              </div>
+              <h3 className="font-bold text-sm text-teal-dark">Find on ZocDoc</h3>
+              <p className="text-xs text-teal-dark/50 mt-1">Book online. See availability today.</p>
+            </a>
+            <a href="https://www.surgeonvalue.com" target="_blank" rel="noopener noreferrer"
+              className="group p-6 bg-white rounded-2xl border border-teal/10 hover:shadow-lg hover:-translate-y-1 transition-all text-center">
+              <div className="w-12 h-12 rounded-xl bg-teal/10 mx-auto mb-3 flex items-center justify-center">
+                <svg className="w-6 h-6 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
+              </div>
+              <h3 className="font-bold text-sm text-teal-dark">Find on SurgeonValue</h3>
+              <p className="text-xs text-teal-dark/50 mt-1">Specialists who bill correctly for your care.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Recommended Products */}
+      <section className="py-16 px-6 bg-cream">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-teal-dark text-center mb-2">Get the right gear</h2>
+          <p className="text-teal-dark/60 text-center mb-8">Products that help manage back pain. HSA/FSA eligible items marked.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {[
-              "Spine Surgery",
-              "Physical Therapy",
-              "Pain Management",
-              "Yoga / Movement",
-              "Digital Health",
-            ].map((cat, i) => (
-              <a
-                key={i}
-                href={'mailto:partners@solvinghealth.com?subject=Partner inquiry: ' + encodeURIComponent(cat) + ' on doesyourbackhurt.com'}
-                className="group border-2 border-dashed border-teal/20 rounded-2xl p-6 text-center hover:border-teal/40 transition-all block bg-white"
-              >
-                <div className="w-12 h-12 rounded-xl bg-teal/5 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-teal/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+              { name: "Lumbar Support Pillow", price: "$32", amazon: "https://www.amazon.com/s?k=lumbar+support+pillow+office", hsa: true, desc: "Memory foam support for desk and car seats" },
+              { name: "TENS Unit", price: "$35", amazon: "https://www.amazon.com/s?k=TENS+unit+back+pain", hsa: true, desc: "Electrical nerve stimulation for pain relief" },
+              { name: "Yoga Mat (Extra Thick)", price: "$25", amazon: "https://www.amazon.com/s?k=yoga+mat+extra+thick+back", hsa: false, desc: "Cushioned mat for back-friendly stretching" },
+              { name: "Inversion Table", price: "$120", amazon: "https://www.amazon.com/s?k=inversion+table+back+pain", hsa: true, desc: "Spinal decompression at home" },
+              { name: "Heating Pad (Large)", price: "$30", amazon: "https://www.amazon.com/s?k=heating+pad+large+back", hsa: true, desc: "Heat therapy for muscle tension and stiffness" },
+              { name: "Back Stretcher", price: "$28", amazon: "https://www.amazon.com/s?k=back+stretcher+lumbar", hsa: false, desc: "Passive stretch device for spinal relief" },
+            ].map((p, i) => (
+              <a key={i} href={p.amazon} target="_blank" rel="noopener noreferrer"
+                className="group bg-white rounded-2xl p-5 border border-teal/10 hover:shadow-lg hover:-translate-y-1 transition-all">
+                <div className="flex justify-between items-start mb-2">
+                  <h3 className="font-bold text-sm text-teal-dark">{p.name}</h3>
+                  <span className="text-sm font-bold text-teal">{p.price}</span>
                 </div>
-                <p className="font-bold text-teal-dark/40 text-sm">{cat}</p>
-                <p className="text-xs text-teal-dark/20 mt-1 uppercase tracking-wider font-semibold">Unclaimed</p>
-                <span className="mt-4 inline-flex items-center px-4 py-2 rounded-lg text-xs font-bold text-white bg-teal opacity-0 group-hover:opacity-100 transition-opacity">Claim this spot</span>
+                <p className="text-xs text-teal-dark/50 mb-3">{p.desc}</p>
+                <div className="flex items-center justify-between">
+                  {p.hsa ? (
+                    <span className="inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-bold bg-green-50 text-green-700 border border-green-200">
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                      HSA/FSA eligible
+                    </span>
+                  ) : (
+                    <span className="text-[10px] text-teal-dark/20">Not HSA eligible</span>
+                  )}
+                  <span className="text-xs font-medium text-teal group-hover:underline">View on Amazon</span>
+                </div>
               </a>
             ))}
           </div>
-          <div className="mt-8 text-center">
-            <div className="inline-flex items-center gap-3 bg-amber-50 border border-amber-200 rounded-xl px-6 py-4">
-              <svg className="w-5 h-5 text-amber-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
-              <p className="text-sm text-amber-800 font-medium">738 people searched back pain help this month. No partners are here yet.</p>
-            </div>
+          <div className="mt-6 text-center">
+            <p className="text-xs text-teal-dark/30">HSA/FSA eligible items save you 28-36% with pre-tax dollars. <a href="https://www.comfortcard.org" className="font-medium text-teal">Learn more via ComfortCard</a></p>
           </div>
-          <p className="text-center mt-4"><a href="mailto:partners@solvinghealth.com?subject=Partner inquiry for doesyourbackhurt.com" className="inline-flex items-center px-6 py-3 rounded-lg text-sm font-bold text-white bg-teal transition-all hover:scale-105">Become a partner <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a></p>
-          <p className="text-xs text-teal-dark/30 mt-3 text-center">Free listing available. Premium placement from $199/mo.</p>
         </div>
       </section>
 
