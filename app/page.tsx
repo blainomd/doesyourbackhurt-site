@@ -67,7 +67,7 @@ export default function Home() {
           80% of adults say yes at some point in their life. Many pay $50-150/month for a gym they don&apos;t use. We charge $10.
         </p>
         <div className="mt-10">
-          <EmailForm id="hero-email" buttonText="Get started" />
+          <button onClick={() => { const el = document.getElementById('sh-chat-btn'); if (el) el.click(); }} className="px-8 py-4 bg-teal text-white font-semibold rounded-lg hover:bg-teal-dark transition-colors cursor-pointer text-lg">Talk to Sage</button>
         </div>
       </section>
 
@@ -191,7 +191,10 @@ export default function Home() {
             Enter your email and we will send you the schedule.
           </p>
           <div className="flex justify-center">
-            <EmailForm id="cta-email" buttonText="I'm in" />
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a href="https://www.co-op.care" className="px-6 py-3 bg-teal text-white font-semibold rounded-lg hover:bg-teal-dark transition-colors">Explore co-op.care</a>
+              <a href="https://www.comfortcard.org" className="px-6 py-3 bg-white/10 text-white font-semibold rounded-lg hover:bg-white/20 transition-colors border border-teal/30">Get a ComfortCard</a>
+            </div>
           </div>
         </div>
       </section>
