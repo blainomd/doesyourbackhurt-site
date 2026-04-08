@@ -196,6 +196,44 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Partner Board */}
+      <section className="py-20 px-6 bg-cream">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-teal-dark text-center mb-2">Who&apos;s helping in your area?</h2>
+          <p className="text-teal-dark/60 text-center mb-10 max-w-xl mx-auto">These partner slots connect people with back pain to the organizations that can actually help them.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              "Spine Surgery",
+              "Physical Therapy",
+              "Pain Management",
+              "Yoga / Movement",
+              "Digital Health",
+            ].map((cat, i) => (
+              <a
+                key={i}
+                href={'mailto:partners@solvinghealth.com?subject=Partner inquiry: ' + encodeURIComponent(cat) + ' on doesyourbackhurt.com'}
+                className="group border-2 border-dashed border-teal/20 rounded-2xl p-6 text-center hover:border-teal/40 transition-all block bg-white"
+              >
+                <div className="w-12 h-12 rounded-xl bg-teal/5 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-6 h-6 text-teal/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                </div>
+                <p className="font-bold text-teal-dark/40 text-sm">{cat}</p>
+                <p className="text-xs text-teal-dark/20 mt-1 uppercase tracking-wider font-semibold">Unclaimed</p>
+                <span className="mt-4 inline-flex items-center px-4 py-2 rounded-lg text-xs font-bold text-white bg-teal opacity-0 group-hover:opacity-100 transition-opacity">Claim this spot</span>
+              </a>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <div className="inline-flex items-center gap-3 bg-amber-50 border border-amber-200 rounded-xl px-6 py-4">
+              <svg className="w-5 h-5 text-amber-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
+              <p className="text-sm text-amber-800 font-medium">738 people searched back pain help this month. No partners are here yet.</p>
+            </div>
+          </div>
+          <p className="text-center mt-4"><a href="mailto:partners@solvinghealth.com?subject=Partner inquiry for doesyourbackhurt.com" className="inline-flex items-center px-6 py-3 rounded-lg text-sm font-bold text-white bg-teal transition-all hover:scale-105">Become a partner <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg></a></p>
+          <p className="text-xs text-teal-dark/30 mt-3 text-center">Free listing available. Premium placement from $199/mo.</p>
+        </div>
+      </section>
+
       {/* Connector */}
       <section id="connector" className="py-20 px-6 bg-white">
         <div className="max-w-3xl mx-auto text-center">
