@@ -1,0 +1,12 @@
+{
+  "name": "Back Pain Guide",
+  "short_name": "BackPain",
+  "description": "Your back pain companion",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf8ff",
+  "theme_color": "#00595c",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

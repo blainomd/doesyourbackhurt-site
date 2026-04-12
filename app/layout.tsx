@@ -1,26 +1,71 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
+import { siteConfig } from "@/site.config";
+import { JsonLd } from "./components/JsonLd";
+import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Does Your Back Hurt? | $10/month yoga. No gym. No contract.",
-  description:
-    "80% of adults say yes. Most pay $150/month for a gym they don't use. We charge $10. Neighbor's backyard yoga, physician-monitored progress, and Medicare ACCESS MSK coverage if eligible.",
+  title: `${siteConfig.name} | ${siteConfig.tagline}`,
+  description: siteConfig.description,
+  openGraph: {
+    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    type: "website",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">
+    <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet"
+        />
+        <JsonLd
+          conditionName="Back Pain"
+          conditionDescription="Free AI-powered back pain assessment. Understand herniated discs, sciatica, spinal stenosis, and when to see a spine specialist."
+          icd10Codes={['M54.5', 'M51.16', 'M47.816']}
+          specialistType="Spine Specialist"
+          domain="doesyourbackhurt.com"
+        />
+      </head>
+      <body className="bg-white text-gray-900 antialiased">
         {children}
+
+        {/* Sage Chat Widget */}
+        <Script
+          src={`https://www.solvinghealth.com/widgets/sage-chat.js?channel=${siteConfig.chatChannel}`}
+          strategy="lazyOnload"
+        />
+
+        {/* Gemini Voice Widget */}
+        <Script
+          src={`https://www.solvinghealth.com/widgets/gemini-voice.js?site=${siteConfig.voiceSite}`}
+          strategy="lazyOnload"
+        />
+
+        {/* HarnessHealth Universal Health Footer */}
+        <Script
+          src="https://harnesshealth.ai/widget.js"
+          strategy="lazyOnload"
+        />
+
+        {/* chanio Identity Layer */}
+        <Script
+          src="https://chanio.com/sdk.js"
+          data-site={siteConfig.chatChannel}
+          strategy="lazyOnload"
+        />
+
         <Analytics />
-        <Script src="https://solvinghealth.com/chat-widget.js" data-channel="doesyourbackhurt" data-color="#0D7377" strategy="lazyOnload" />
-        <Script src="https://solvinghealth.com/voice-embed.js" data-site="doesyourbackhurt" strategy="lazyOnload" />
+      <Script src="https://harnesshealth.ai/harness.js" strategy="lazyOnload" />
       </body>
     </html>
   );
