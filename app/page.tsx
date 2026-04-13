@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { siteConfig } from "@/site.config";
+import Assessment from "@/app/components/Assessment";
 
 /* ─── Icon Components ─────────────────────────────────────────────── */
 
@@ -662,6 +663,19 @@ export default function Home() {
               <ArrowIcon />
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* ── Back Pain Assessment ──────────────────────────────── */}
+      <section id="assessment" className="py-16">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2" style={{ color: siteConfig.accentColor }}>
+            Back Pain Assessment
+          </h2>
+          <p className="text-center text-gray-500 mb-8 max-w-2xl mx-auto">
+            8 questions including red flag screening. Get a clear recommendation: self-care, see your doctor, see a specialist, or seek emergency care.
+          </p>
+          <Assessment />
         </div>
       </section>
 
