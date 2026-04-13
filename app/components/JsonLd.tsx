@@ -1,5 +1,3 @@
-import { siteConfig } from '@/site.config';
-
 interface JsonLdProps {
   conditionName: string;
   conditionDescription: string;
@@ -15,7 +13,7 @@ export function JsonLd({ conditionName, conditionDescription, icd10Codes, specia
       {
         '@type': 'MedicalWebPage',
         '@id': `https://${domain}/#webpage`,
-        name: `${conditionName} Guide — co-op.care`,
+        name: `${conditionName} — Free AI Assessment`,
         description: conditionDescription,
         url: `https://${domain}`,
         inLanguage: 'en-US',
@@ -38,12 +36,12 @@ export function JsonLd({ conditionName, conditionDescription, icd10Codes, specia
           '@id': 'https://altru.care/#physician',
           name: 'Josh Emdur, DO',
           honorificSuffix: 'DO',
-          description: 'Board Certified Internal Medicine physician. Licensed in all 50 states. Medical Director, co-op.care.',
+          description: 'Board Certified Internal Medicine physician. Licensed in all 50 states.',
           url: 'https://altru.care',
           affiliation: {
             '@type': 'MedicalOrganization',
-            name: 'co-op.care',
-            url: 'https://co-op.care',
+            name: 'SolvingHealth',
+            url: 'https://solvinghealth.com',
           },
           hasCredential: {
             '@type': 'EducationalOccupationalCredential',
@@ -56,12 +54,12 @@ export function JsonLd({ conditionName, conditionDescription, icd10Codes, specia
         '@type': 'WebSite',
         '@id': `https://${domain}/#website`,
         url: `https://${domain}`,
-        name: `${conditionName} — co-op.care`,
+        name: `${conditionName} — SolvingHealth`,
         publisher: {
           '@type': 'MedicalOrganization',
-          name: 'co-op.care',
-          url: 'https://co-op.care',
-          logo: 'https://co-op.care/logo.svg',
+          name: 'SolvingHealth',
+          url: 'https://solvinghealth.com',
+          logo: 'https://solvinghealth.com/logo.svg',
         },
       },
       {
@@ -81,6 +79,14 @@ export function JsonLd({ conditionName, conditionDescription, icd10Codes, specia
             acceptedAnswer: {
               '@type': 'Answer',
               text: `If symptoms persist more than 6 weeks, worsen, or affect daily activities, consult a ${specialistType}. Our free assessment can help you decide.`,
+            },
+          },
+          {
+            '@type': 'Question',
+            name: `What are the warning signs of serious back pain?`,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: `Seek emergency care for back pain with loss of bladder or bowel control, progressive leg weakness, numbness in the groin or inner thighs, pain after significant trauma, or back pain accompanied by fever. These may indicate a serious condition requiring immediate evaluation.`,
             },
           },
         ],

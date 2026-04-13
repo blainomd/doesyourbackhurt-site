@@ -418,13 +418,13 @@ function DoctorVisitCompanion() {
             <div className="bg-white rounded-2xl p-6 border border-gray-100">
               <p className="font-bold text-sm mb-3" style={{ color: siteConfig.accentColor }}>What did your doctor say?</p>
               <textarea value={doctorNotes} onChange={(e) => setDoctorNotes(e.target.value)} rows={3}
-                placeholder="The doctor said my hip pain is likely from... They recommended..."
+                placeholder="The doctor said my back pain is likely from... They recommended..."
                 className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:ring-1 resize-none" style={{ "--tw-ring-color": siteConfig.primaryColor } as React.CSSProperties} />
             </div>
             <div className="bg-white rounded-2xl p-6 border border-gray-100">
               <p className="font-bold text-sm mb-3" style={{ color: siteConfig.accentColor }}>Diagnosis (if given)</p>
               <input value={diagnosis} onChange={(e) => setDiagnosis(e.target.value)}
-                placeholder="e.g., Hip osteoarthritis, labral tear, bursitis..."
+                placeholder="e.g., Lumbar disc herniation, spinal stenosis, muscle strain..."
                 className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:ring-1" style={{ "--tw-ring-color": siteConfig.primaryColor } as React.CSSProperties} />
             </div>
             <div className="bg-white rounded-2xl p-6 border border-gray-100">
