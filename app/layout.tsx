@@ -38,17 +38,17 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-white text-gray-900 antialiased">
-        {children}{/* chanio Identity Layer */}
+        {children}
 
         {/* Sage Chat Widget */}
         <Script
-          src={`https://www.solvinghealth.com/widgets/sage-chat.js?channel=${siteConfig.chatChannel}`}
+          src={`https://solvinghealth.com/widgets/sage-chat.js?channel=${siteConfig.chatChannel}`}
           strategy="lazyOnload"
         />
 
         {/* Gemini Voice Widget */}
         <Script
-          src={`https://www.solvinghealth.com/widgets/gemini-voice.js?site=${siteConfig.voiceSite}`}
+          src={`https://solvinghealth.com/widgets/gemini-voice.js?site=${siteConfig.voiceSite}`}
           strategy="lazyOnload"
         />
         <Script

@@ -586,7 +586,7 @@ export default function Home() {
   const mcpSnippet = `"${siteConfig.connectorKey}": {
   "command": "npx",
   "args": ["-y", "@anthropic-ai/mcp-remote",
-    "https://www.solvinghealth.com/mcp"]
+    "https://solvinghealth.com/mcp"]
 }`;
 
   return (
@@ -946,55 +946,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Email Capture ──────────────────────────────────────── */}
-      {/* ── Explore More ──────────────────────────────────────── */}
-      <section className="py-20">
-        <div className="max-w-xl mx-auto px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: siteConfig.accentColor }}>
-            Part of something bigger
-          </h2>
-          <p className="text-gray-500 mb-8">
-            This site is one of 25 in a physician-governed health intelligence ecosystem.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="https://www.co-op.care" className="px-8 py-4 rounded-xl text-white font-bold transition-all hover:opacity-90 hover:scale-105" style={{ backgroundColor: siteConfig.primaryColor }}>
-              Explore co-op.care
-            </a>
-            <a href="https://www.comfortcard.org" className="px-8 py-4 rounded-xl font-bold border-2 transition-all hover:opacity-90" style={{ borderColor: siteConfig.primaryColor, color: siteConfig.primaryColor }}>
-              Get a ComfortCard
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* ── HarnessHealth Action Band ──────────────────────────── */}
+      {/* ── Action Band ──────────────────────────────────────── */}
       <section className="py-16 bg-surface border-t border-gray-100">
         <div className="max-w-3xl mx-auto px-6 text-center">
           <h2 className="text-xl md:text-2xl font-bold mb-2" style={{ color: siteConfig.accentColor }}>
             Ready to take the next step?
           </h2>
           <p className="text-gray-500 mb-8 text-sm">
-            Check in for your upcoming visit, find a specialist near you, or save money on your care with a ComfortCard.
+            Talk to Sage, find a spine specialist, or save money on your care with a ComfortCard.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center flex-wrap">
             <a
-              href="https://harnesshealth.ai/checkin"
+              href="#chat"
               className="inline-flex items-center justify-center px-6 py-3 rounded-xl text-white font-bold transition-all hover:opacity-90 hover:scale-105 text-sm"
               style={{ backgroundColor: siteConfig.primaryColor }}
             >
               <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              Check in for your visit
+              Start free assessment
             </a>
             <a
-              href="https://harnesshealth.ai/find"
+              href={siteConfig.ecosystemLinks.surgeonvalue}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-bold border-2 transition-all hover:opacity-90 text-sm"
               style={{ borderColor: siteConfig.primaryColor, color: siteConfig.primaryColor }}
             >
               <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-              Find a specialist
+              Find a spine specialist
             </a>
             <a
-              href="https://comfortcard.org"
+              href="https://www.comfortcard.org"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 rounded-xl font-bold border-2 border-gray-200 text-gray-600 transition-all hover:opacity-90 text-sm"
             >
               <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg>

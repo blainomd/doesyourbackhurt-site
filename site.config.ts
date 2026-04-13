@@ -81,7 +81,7 @@ export const siteConfig = {
   ecosystemLinks: {
     surgeonvalue: "https://www.surgeonvalue.com",
     coopccare: "https://www.co-op.care",
-    solvinghealth: "https://www.solvinghealth.com",
+    solvinghealth: "https://solvinghealth.com",
   },
 
   // ── MCP Connector ──────────────────────────────────────────
