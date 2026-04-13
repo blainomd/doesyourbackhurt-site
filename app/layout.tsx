@@ -38,7 +38,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-white text-gray-900 antialiased">
-        {children}
+        {children}{/* chanio Identity Layer */}
 
         {/* Sage Chat Widget */}
         <Script
@@ -51,23 +51,13 @@ export default function RootLayout({
           src={`https://www.solvinghealth.com/widgets/gemini-voice.js?site=${siteConfig.voiceSite}`}
           strategy="lazyOnload"
         />
-
-        {/* HarnessHealth Universal Health Footer */}
-        <Script
-          src="https://harnesshealth.ai/widget.js"
-          strategy="lazyOnload"
-        />
-
-        {/* chanio Identity Layer */}
         <Script
           src="https://chanio.com/sdk.js"
           data-site={siteConfig.chatChannel}
           strategy="lazyOnload"
         />
 
-        <Analytics />
-      <Script src="https://harnesshealth.ai/harness.js" strategy="lazyOnload" />
-      </body>
+        <Analytics /></body>
     </html>
   );
 }
