@@ -40,7 +40,7 @@ export default function RootLayout({
       <body className="bg-white text-gray-900 antialiased">
         {children}
 
-        <Script src="https://solvinghealth.com/footer.js" data-brand="condition-site" data-theme="light" strategy="lazyOnload" />
+        <Script src="https://harnesshealth.ai/footer.js" data-brand="condition-site" data-theme="light" strategy="lazyOnload" />
         <Analytics /></body>
     </html>
   );
