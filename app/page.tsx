@@ -707,28 +707,53 @@ export default function Home() {
             Key risk factors and information about {siteConfig.name.toLowerCase()}.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {siteConfig.sections.map((section, i) => (
-              <div
-                key={i}
-                className="group p-6 rounded-2xl bg-white border border-gray-100 transition-all hover:shadow-lg hover:-translate-y-1"
-              >
-                <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm mb-4"
-                  style={{ backgroundColor: siteConfig.primaryColor }}
+            {siteConfig.sections.map((section, i) => {
+              const href = (section as { href?: string }).href;
+              const isExternal = !!href && /^https?:\/\//.test(href);
+              const cardClasses =
+                "group block p-6 rounded-2xl bg-white border border-gray-100 transition-all hover:shadow-lg hover:-translate-y-1 hover:border-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-600 focus:ring-offset-2";
+
+              const inner = (
+                <>
+                  <div
+                    className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm mb-4"
+                    style={{ backgroundColor: siteConfig.primaryColor }}
+                  >
+                    {i + 1}
+                  </div>
+                  <h3
+                    className="text-lg font-bold mb-2 group-hover:underline"
+                    style={{ color: siteConfig.accentColor }}
+                  >
+                    {section.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed text-sm">
+                    {section.description}
+                  </p>
+                  {href && (
+                    <span className="inline-flex items-center gap-1 mt-3 text-xs font-mono text-gray-400 group-hover:text-teal-600 transition-colors">
+                      {isExternal ? "Open →" : "Jump to →"}
+                    </span>
+                  )}
+                </>
+              );
+
+              return href ? (
+                <a
+                  key={i}
+                  href={href}
+                  {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className={cardClasses}
+                  aria-label={`${section.title} — ${isExternal ? "opens in a new tab" : "scrolls to section"}`}
                 >
-                  {i + 1}
+                  {inner}
+                </a>
+              ) : (
+                <div key={i} className={cardClasses}>
+                  {inner}
                 </div>
-                <h3
-                  className="text-lg font-bold mb-2"
-                  style={{ color: siteConfig.accentColor }}
-                >
-                  {section.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
-                  {section.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

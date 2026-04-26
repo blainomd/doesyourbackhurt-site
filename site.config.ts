@@ -29,31 +29,37 @@ export const siteConfig = {
       title: "Herniated Disc",
       description:
         "A disc that bulges or ruptures and presses on nearby nerves. Causes sharp pain, numbness, or weakness that may radiate down one or both legs. Most common in the lower back.",
+      href: "#chat",
     },
     {
       title: "Sciatica",
       description:
         "Pain that radiates along the sciatic nerve from the lower back through the hip and down the leg. Often caused by a herniated disc or bone spur compressing the nerve.",
+      href: "#chat",
     },
     {
       title: "Spinal Stenosis",
       description:
         "Narrowing of the spinal canal that puts pressure on the spinal cord and nerves. Causes pain, numbness, or weakness, especially with prolonged standing or walking.",
+      href: "#chat",
     },
     {
       title: "Muscle Strain",
       description:
         "The most common cause of back pain. Overstretching or tearing of back muscles or ligaments, often from heavy lifting or sudden awkward movement. Usually improves within weeks.",
+      href: "#chat",
     },
     {
       title: "Non-Surgical Treatment",
       description:
         "Physical therapy, anti-inflammatory medications, heat and ice therapy, and core strengthening exercises resolve most back pain without surgery.",
+      href: "https://kineticfirst.com/?ref=doesyourbackhurt",
     },
     {
       title: "When to See a Specialist",
       description:
         "If back pain is severe, lasts longer than six weeks, radiates down the leg, or is accompanied by weakness or bladder/bowel changes, a spine evaluation is warranted.",
+      href: "https://harnesshealth.ai/find?specialty=orthopedic-surgery",
     },
   ],
 
