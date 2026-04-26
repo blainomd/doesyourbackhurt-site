@@ -6,13 +6,36 @@ import { JsonLd } from "./components/JsonLd";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(`https://${siteConfig.domain}`),
   title: `${siteConfig.name} | ${siteConfig.tagline}`,
   description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    url: "/",
     type: "website",
+    images: [
+      {
+        url: "/apple-icon.png",
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | ${siteConfig.tagline}`,
+    description: siteConfig.description,
+    images: ["/apple-icon.png"],
   },
 };
 
