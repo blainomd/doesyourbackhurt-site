@@ -19,9 +19,9 @@ export const siteConfig = {
   voiceSite: "doesyourbackhurt",
 
   // ── Hero Section ───────────────────────────────────────────
-  heroTitle: "Your back pain\ndeserves real answers.",
+  heroTitle: "Most back pain\nis not surgical.\nKnowing is the value.",
   heroSubtitle:
-    "Free AI-powered back pain assessment. No login. No paywall. Just answers.",
+    "Five-minute AI triage. Physician-reviewed. Free — so you go in informed, not guessing.",
 
   // ── Risk Factors / Key Information ─────────────────────────
   sections: [
